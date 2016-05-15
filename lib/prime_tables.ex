@@ -1,0 +1,2 @@
+defmodule PrimeTables do
+end
