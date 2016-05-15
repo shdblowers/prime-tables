@@ -8,11 +8,11 @@ defmodule PrimeTables.PrettyPrint do
     :io.fwrite(format_for(column_widths), Enum.map(array, &to_string(&1)))
   end
 
-  def format_for(column_widths) do
+  defp format_for(column_widths) do
     "| " <> Enum.map_join(column_widths, " | ", fn width -> "~#{width}s" end) <> " |~n"
   end
 
-  def find_column_widths(arrays) do
+  defp find_column_widths(arrays) do
     arrays
     |> List.zip
     |> List.foldl([], fn(tuple, acc) ->
