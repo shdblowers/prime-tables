@@ -25,7 +25,7 @@ defmodule PrimesTest do
   end
 
   test "knows 3 is a prime" do
-    assert is_prime?(2) == true
+    assert is_prime?(3) == true
   end
 
   test "knows 87 is not a prime" do
