@@ -5,18 +5,20 @@ defmodule PrimeTables.PrettyPrint do
   end
 
   def print_array(array, column_widths) do
-    :io.fwrite(format_for(column_widths), array)
+    :io.fwrite(format_for(column_widths), Enum.map(array, &to_string(&1)))
   end
 
   def format_for(column_widths) do
-    "| " <> Enum.map_join(column_widths, " | ", fn width -> "~#{width}B" end) <> " |~n"
+    "| " <> Enum.map_join(column_widths, " | ", fn width -> "~#{width}s" end) <> " |~n"
   end
 
   def find_column_widths(arrays) do
     arrays
     |> List.zip
     |> List.foldl([], fn(tuple, acc) ->
-      acc ++ [String.length(to_string(Enum.max(Tuple.to_list(tuple))))]
+      acc ++ [Enum.max(Enum.map(Tuple.to_list(tuple), fn(x) ->
+        String.length(to_string(x))
+      end))]
     end)
   end
 

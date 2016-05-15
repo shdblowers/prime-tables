@@ -28,7 +28,21 @@ defmodule PrettyPrintTest do
     | 1 | 3 | 10 |
     | 2 | 5 | 11 |
     """
+  end
 
+  test "2D array with blank cell in correct format" do
+    result = capture_io fn ->
+      print_2D_array([
+        ["", 3, 10],
+        [2, 5, 11]
+      ])
+    end
+
+    assert result ==
+    """
+    |   | 3 | 10 |
+    | 2 | 5 | 11 |
+    """
   end
 
 end

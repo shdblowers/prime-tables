@@ -3,6 +3,7 @@ defmodule PrimeTables.Mixfile do
 
   def project do
     [app: :prime_tables,
+     escript: escript_config,
      version: "0.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
@@ -29,4 +30,9 @@ defmodule PrimeTables.Mixfile do
   defp deps do
     []
   end
+
+  defp escript_config() do
+    [main_module: PrimeTables]
+  end
+
 end
