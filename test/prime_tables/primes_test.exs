@@ -3,6 +3,14 @@ defmodule PrimesTest do
 
   import PrimeTables.Primes
 
+  test "gets first prime number" do
+    assert get_first_n_primes(1) == [2]
+  end
+
+  test "gets first three prime numbers" do
+    assert get_first_n_primes(3) == [2, 3, 5]
+  end
+
   test "knows 1 is not a prime" do
     assert is_prime?(1) == false
   end

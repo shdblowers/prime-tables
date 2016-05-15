@@ -1,5 +1,9 @@
 defmodule PrimeTables.Primes do
 
+  def get_first_n_primes(number) do
+    [2]
+  end
+
   def is_prime?(number) do
     case number do
       1 -> false
