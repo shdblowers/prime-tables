@@ -23,3 +23,6 @@ PrimeTables.PrettyPrint works for any 2D array.
 ## What I would have done with more time
 
 Make the application accessible via a web interface.
+Create documentation for the application using ExDoc.
+The code for PrimeTables.PrettyPrint could be more efficient, especially
+find_column_widths, changes had to be made as I realised nil > 1 in Elixir.
