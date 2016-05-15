@@ -1,20 +1,25 @@
 # PrimeTables
 
-**TODO: Add description**
+This application takes user input in the form of a single integer (N) and
+produces a multiplication table of size N+1 x N+1 of the first N prime numbers.
 
-## Installation
+## How to run it
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+    vagrant up
+    vagrant ssh
+    cd /prime-tables/
+    mix escript.build
+    ./prime_tables N
 
-  1. Add prime_tables to your list of dependencies in `mix.exs`:
+## What I'm pleased with
 
-        def deps do
-          [{:prime_tables, "~> 0.0.1"}]
-        end
+I am please with the overall performance of the application, especially the
+get_first_n_primes in PrimeTables.Primes.
+I am also pleased with how each module of the application was written with
+re-usability in mind, that its usage could be extended beyond the needs of this
+application without any change. Example, print_2D_array in
+PrimeTables.PrettyPrint works for any 2D array.
 
-  2. Ensure prime_tables is started before your application:
+## What I would have done with more time
 
-        def application do
-          [applications: [:prime_tables]]
-        end
-
+Make the application accessible via a web interface.
