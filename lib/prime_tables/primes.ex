@@ -1,7 +1,15 @@
 defmodule PrimeTables.Primes do
 
   def get_first_n_primes(number) do
-    [2]
+    2
+    |> Stream.iterate(&get_next_prime(&1))
+    |> Enum.take(number)
+  end
+
+  defp get_next_prime(number) do
+    number + 1
+    |> Stream.iterate(&(&1+1))
+    |> Enum.find(&is_prime?(&1))
   end
 
   def is_prime?(number) do

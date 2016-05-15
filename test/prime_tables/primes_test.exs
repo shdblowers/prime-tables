@@ -11,6 +11,11 @@ defmodule PrimesTest do
     assert get_first_n_primes(3) == [2, 3, 5]
   end
 
+  test "gets first ten prime numbers" do
+    assert get_first_n_primes(10) ==
+      [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+  end
+
   test "knows 1 is not a prime" do
     assert is_prime?(1) == false
   end
