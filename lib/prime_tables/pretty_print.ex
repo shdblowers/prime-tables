@@ -1,5 +1,9 @@
 defmodule PrimeTables.PrettyPrint do
 
+  def print_2D_array(array) do
+    
+  end
+
   def print_array(array, column_widths) do
     :io.fwrite(format_for(column_widths), array)
   end

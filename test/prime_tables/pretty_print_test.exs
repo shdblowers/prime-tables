@@ -15,4 +15,20 @@ defmodule PrettyPrintTest do
     """
   end
 
+  test "prints 2D array in correct format" do
+    result = capture_io fn ->
+      print_2D_array([
+        [1, 3, 10],
+        [2, 5, 11]
+      ])
+    end
+
+    assert result ==
+    """
+    | 1 | 3 | 10 |
+    | 2 | 5 | 11 |
+    """
+
+  end
+
 end
